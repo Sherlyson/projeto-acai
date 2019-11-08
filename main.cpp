@@ -2,12 +2,6 @@
 #include <stdlib.h>
 #include "estoque.h"
 
-typedef struct{
-	char nome[30];
-	int qtd;
-	float preco, venda;
-} produto;
-
 int main(){
 	int *endereco;
 	int opcao;
@@ -25,19 +19,6 @@ int main(){
 			case (1):
 	        	estoque(prod, &endereco);
 			break;
-            case(2):
-        	    gerenciamento(prod);
-            break;
-            case(3):
-        	    estoque(prod);
-		    break;
-            case(4):
-			    vendas(prod);
-		    break;
-            case(5):
-        	    printf("\n\nObrigado por usar o programa!\n\n");
-                exit(0);
-            break;
             default:
 		        printf("Comando invalido\n");
 		        system("PAUSE");

@@ -3,9 +3,15 @@
 #include <stdlib.h>
 //#include <conio.h>
 
+typedef struct{
+	char nome[30];
+	int qtd;
+	float preco, venda;
+} produto;
+
 int x = 0;
 
-void cadastrar_produto (produto *prod, int *endereco){
+void cadastrar_produto(produto *prod; int *endereco){
 	do{
 		prod = (produto*)realloc(prod,((*endereco)+1)*sizeof(produto));
 		if(prod==NULL){
@@ -32,7 +38,7 @@ void cadastrar_produto (produto *prod, int *endereco){
 	}while(opcao==1);
 }
 
-void exibir_estoque(produto *prod, int *endereco){
+void exibir_estoque(produto *prod; int *endereco){
 	if(x!=1){
 		printf("ESTOQUE VAZIO!");
 		system("PAUSE");
@@ -42,4 +48,12 @@ void exibir_estoque(produto *prod, int *endereco){
 			printf ("||Codigo: %d\t||Nome: %s\t||Preco: R$ %.2f\t||Quantidade: %d\n", i, prod[i].nome, prod[i].preco, prod[i].qtd);
 		}
 	}
+}
+
+void alterar_quantidade(produto *prod; int qtd, id;){
+	printf("Digite o id do produto a ter a quantidade alterada: ");
+	scanf("%d", &id);
+	printf("Digite a quantidade do produto a ser alterada: ");
+	scanf("%d", &qtd);
+	prod[id].qtd = prod[id].qtd + qtd;
 }
